@@ -29,6 +29,14 @@ public:
 };
 void correctZipAndSortLetters(vector<ZipInfo>& zipinfo, vector<Letter>& letters) {
  //**Begin Insert**
+ map< string,int > data_zip;
+ for (auto x : zipinfo){
+    data_zip[x.district] = x.zip;
+ }
+ for (auto& x : letters){
+    x.zip = data_zip[x.district];
+ }
+ sort(letters.begin(),letters.end());
  //**End Insert**
 }
 int main() {
