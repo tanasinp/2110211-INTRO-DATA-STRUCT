@@ -9,6 +9,15 @@ public:
  string name; string address; string province; string district; int zip;
  bool operator < (const Letter& other) const {
  //**Begin Insert**
+ if(zip == other.zip){
+    if (address == other.address){
+        return name < other.name;
+    } else {
+        return address < other.address;
+    }
+ } else {
+    return zip < other.zip;
+ }
  //**End Insert**
  }
 };
