@@ -11,7 +11,15 @@ public:
  //**Begin Insert**
  if(zip == other.zip){
     if (address == other.address){
-        return name < other.name;
+        if (district == other.district){
+            if (province == other.province){
+                return name < other.name;
+            } else {
+                return province < other.province;
+            }
+        } else {
+            return district < other.district;
+        }
     } else {
         return address < other.address;
     }
