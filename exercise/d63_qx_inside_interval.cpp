@@ -19,7 +19,7 @@ int main(){
         cin >> a;
         auto it = m1.lower_bound(a);
         if(it!=m1.end()){
-            if (a >= it->second){
+            if (a >= it->second){ // (*it).second
                 cout << "1 ";
             } else {
                 cout << "0 ";
