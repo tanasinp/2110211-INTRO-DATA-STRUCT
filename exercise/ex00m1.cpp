@@ -22,6 +22,9 @@ int main(){
             for (int i = 0 ; i < chef.size();i++){
                 cout << times << "\n";
                 ctm++;
+                if (ctm >= m){
+                        break;
+                    }
             }
         } else {
             for (auto x : chef){
