@@ -9,7 +9,20 @@
         "array": "cpp",
         "string": "cpp",
         "string_view": "cpp",
-        "__tree": "cpp"
+        "__tree": "cpp",
+        "__locale": "cpp",
+        "__threading_support": "cpp",
+        "atomic": "cpp",
+        "bitset": "cpp",
+        "iterator": "cpp",
+        "ios": "cpp",
+        "istream": "cpp",
+        "locale": "cpp",
+        "memory": "cpp",
+        "mutex": "cpp",
+        "ostream": "cpp",
+        "streambuf": "cpp",
+        "type_traits": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
