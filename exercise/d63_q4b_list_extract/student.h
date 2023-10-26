@@ -13,7 +13,7 @@ void CP::list<T>::extract(const T& value,iterator a, iterator b,CP::list<T>& out
 
   //   }
   // }
-  if (size() == 0 || a == b){
+  if (mSize == 0 || a == b){
     return;
   }
 
