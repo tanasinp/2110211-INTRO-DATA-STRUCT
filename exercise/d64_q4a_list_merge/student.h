@@ -7,9 +7,10 @@ void CP::list<T>::merge(CP::list<CP::list<T>> &ls) {
   //write your code here
   for (auto &l : ls){
     mHeader->prev->next = l.mHeader->next;
-    mHeader->prev = l.mHeader->prev;
+    // mHeader->prev = l.mHeader->prev;
     l.mHeader->next->prev = mHeader->prev;
     l.mHeader->prev->next = mHeader;
+    mHeader->prev = l.mHeader->prev;
 
     mSize += l.size();
     
