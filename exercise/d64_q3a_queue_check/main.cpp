@@ -7,18 +7,18 @@ int main(){
     for (int i=0;i<n;i++){
         int mFront,mSize,mCap,last,correction;
         cin >> mFront >> mSize >> mCap >> last >> correction;
-        if ((mFront + mSize)%mCap != last){
+        
             if (correction == 0){
                 if (mSize > mCap){
                     cout << "WRONG\n";
-                } else if ( (mFront + mSize)%mCap != last){
+                } else if ( (mFront + mSize )%mCap != last){
                     cout << "WRONG\n";
                 } else {
                     cout << "OK\n";
                 }
             } else if (correction == 1){
                 if ((mFront + mSize)%mCap != last){
-                    cout << "WRONG" << " " << (mCap-mSize + last)%mCap << "\n";
+                    cout << "WRONG" << " " << (mCap-mSize + last)%mCap << "\n";//+1
                 } else {
                     cout << "OK\n";
                 }
@@ -46,11 +46,5 @@ int main(){
                     cout << "OK\n";
                 }
             }
-        } else {
-            cout << "OK\n";
-        }
-
-        
-
     }
 }
