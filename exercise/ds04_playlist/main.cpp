@@ -1,6 +1,5 @@
-*
-TASK: ds55b_quiz1_photolist
-*/
+
+//TASK: ds55b_quiz1_photolist
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -195,6 +194,23 @@ class list
 
     void reorder(int pos,std::vector<int> selected) {
       //write your code only here
+      CP::list<T>::iterator positr = begin();
+      while (pos--){
+        positr++;
+      }
+
+      CP::list<T> ::iterator tmp = begin();
+      int count = 0;
+      
+      for (auto x : selected){
+        while (count != x){
+            count++;
+            tmp++;    
+        }
+        insert(positr,tmp.ptr->data);
+        tmp = erase(tmp);
+        tmp++;
+      }
     }
 
 };
