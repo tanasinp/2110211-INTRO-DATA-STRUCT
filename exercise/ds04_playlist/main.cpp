@@ -199,18 +199,22 @@ class list
         positr++;
       }
 
-      CP::list<T> ::iterator tmp = begin();
-      int count = 0;
-      
-      for (auto x : selected){
-        while (count != x){
-            count++;
-            tmp++;    
-        }
-        insert(positr,tmp.ptr->data);
-        tmp = erase(tmp);
-        tmp++;
+      std::vector<iterator> sl(selected.size());
+      for(int i = 0 ; i < sl.size() ; i++){
+        sl[i] = begin();
       }
+      for(int i = 0 ; i < sl.size() ; i++){
+        for (int j = 0 ; j < selected[i] ; j++){
+          sl[i]++;
+        }
+      }
+      for(int i = 0 ; i < sl.size() ; i++){
+        insert(positr,*sl[i]); 
+        erase(sl[i]);
+      }
+
+
+
     }
 
 };
