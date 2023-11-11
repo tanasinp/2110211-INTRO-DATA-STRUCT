@@ -36,8 +36,15 @@ public:
     }
     bool isSameBinaryTree(Tree& t) {
         // Insert your code here
+        return isSame(mRoot, t.mRoot);
     }
     // You can also put your code here
+    bool isSame(Node* a , Node* b){
+        if (a == NULL && b == NULL) return true;
+        if (a == NULL) return false;
+        if (b == NULL) return false;
+        return a->data == b->data && isSame(a->left,b->left) && isSame(a->right,b->right);
+    }
 
 protected:
     void insertAt(Node*& r, int x) {
