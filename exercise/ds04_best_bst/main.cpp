@@ -330,6 +330,14 @@ class map_bst
 }
 
 //you can add other function as well BUT CANNOT MODIFY MAIN nor map_bst class
+void insert_best(CP::map_bst<int,int>& bst , int n, int d){
+  if (d == 0) return;
+  bst[n-d] = 0;
+  bst[n+d] = 0;
+  insert_best(bst , n-d , d/2);
+  insert_best(bst, n+d, d/2);
+}
+
 
 void gen_best_bst(int n,CP::map_bst<int,int> &bst) {
   //write your code here
@@ -337,9 +345,13 @@ void gen_best_bst(int n,CP::map_bst<int,int> &bst) {
   //but you cannot modify main or the map_bst class
 
   // this is the example code of adding 1..n to the bst in ascending order
-  for (int i = 1;i <= n;i++) {
-    bst[i] = 100;
-  }
+
+  // for (int i = 1;i <= n;i++) {
+  //   bst[i] = 100;
+  // }
+  n++;
+  bst[n/2] = 0;
+  insert_best(bst,n/2,n/4);
 }
 
 int main() {
